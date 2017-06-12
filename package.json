@@ -1,0 +1,39 @@
+{
+  "name": "ISEF-App",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.0.1",
+    "eslint-config-prettier": "^2.1.1",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-react": "^7.0.1",
+    "flow-bin": "^0.42.0",
+    "jest-expo": "~1.0.1",
+    "prettier": "^1.4.2",
+    "react-native-scripts": "0.0.30",
+    "react-test-renderer": "16.0.0-alpha.6"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "node node_modules/jest/bin/jest.js --watch",
+    "prettier": "prettier --single-quote --trailing-comma all --write \"src/**/*.js\"",
+    "flow": "flow"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "expo": "^17.0.0",
+    "react": "16.0.0-alpha.6",
+    "react-native": "^0.44.0",
+    "react-navigation": "^1.0.0-beta.11"
+  }
+}
