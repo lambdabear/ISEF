@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 const scanIconSrc = require('../../assets/icons/ionicons-2.0.1/ios7-barcode-outline.png');
 
@@ -10,14 +11,25 @@ const styles = StyleSheet.create({
   }
 });
 
-export default class ScanScreen extends React.Component {
+class Scan extends React.Component {
   static navigationOptions = {
     tabBarLabel: '检测',
     tabBarIcon: ({ tintColor }) =>
-      <Image source={scanIconSrc} style={[styles.icon, { tintColor }]} />
+      <Image source={scanIconSrc} style={[styles.icon, { tintColor }]} />,
+    title: '设备检测'
   };
 
   render() {
-    return <View />;
+    return (
+      <View>
+        <Text>Scan animation</Text>
+      </View>
+    );
   }
 }
+
+const ScanScreen = StackNavigator({
+  ScanHome: { screen: Scan }
+});
+
+export default ScanScreen;
