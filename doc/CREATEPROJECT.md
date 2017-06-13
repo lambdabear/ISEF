@@ -8,23 +8,17 @@
 * [install atom plugins](#install-atom-plugins)
 
 
-<a name="install-create-react-native-app">
 ### Install create-react-native-app
-</a>
 ```bash
 yarn add -g create-react-native-app
 ```
 
-<a name="create-project">
 ### Create Project
-</a>
 ```bash
 create-react-native-app your-app-project
 ```
 
-<a name="install-eslint">
 ### Install eslint
-</a>
 ```bash
 cd your-app-project
 yarn add --dev eslint
@@ -42,14 +36,12 @@ Within the configuration file, create an “extend” key and add airbnb to an a
 "extends": ["airbnb"]
 ```
 
-<a name="install-prettier">
 ### Install prettier
-</a>
 ```bash
 yarn add --dev prettier eslint-config-prettier
 ```
 When prettier is available in your project you can add a new script to your npm scripts in package.json; the entry could look like this:
-```json
+```
 "scripts": {
   ...
   "prettier": "prettier --single-quote --trailing-comma all --write \"src/**/*.js\""
@@ -65,14 +57,12 @@ Prettier plays along with ESlint very well — it provides some eslint prese
 ],
 ```
 
-<a name="install-flow">
 ### Install flow
-</a>
 ```bash
 yarn add --dev flow-bin babel-eslint eslint-plugin-flowtype
 ```
 To perform typecheck in your app just add the script to your package.json
-```json
+```
 "scripts": {
   ...
   "flow": "flow",
@@ -102,9 +92,7 @@ When true, only checks files with a @flow annotation in the first comment.
 }
 ```
 
-<a name="install-atom-plugins">
 ### Install atom plugins
-</a>
 ```bash
 apm install linter-eslint prettier-atom react
 ```
