@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "airbnb",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react",
+    "plugin:flowtype/recommended"
+  ],
+  "rules": {
+    // `.jsx` extension cannot be used with React Native
+    // https://github.com/airbnb/javascript/issues/982
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
+  },
+  "plugins": [
+    "flowtype"
+  ]
+}
