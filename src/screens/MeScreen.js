@@ -1,22 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-const personIconSrc = require('../../assets/icons/ionicons-2.0.1/ios7-person-outline.png');
+import styles from './styles';
 
-const styles = StyleSheet.create({
-  icon: {
-    width: 26,
-    height: 26
-  }
-});
+const personIconSrc = require('../../assets/icons/ionicons-2.0.1/ios7-person-outline.png');
 
 class Me extends React.Component {
   static navigationOptions = {
     tabBarLabel: '我',
     tabBarIcon: ({ tintColor }) =>
       <Image source={personIconSrc} style={[styles.icon, { tintColor }]} />,
-    title: '我'
+    title: '我',
+    headerStyle: styles.headerStyle,
+    headerTitleStyle: styles.headerTitleStyle
   };
 
   render() {

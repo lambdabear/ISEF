@@ -1,22 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
-const homeIconSrc = require('../../assets/icons/ionicons-2.0.1/ios7-home-outline.png');
+import styles from './styles';
 
-const styles = StyleSheet.create({
-  icon: {
-    width: 26,
-    height: 26
-  }
-});
+const homeIconSrc = require('../../assets/icons/ionicons-2.0.1/ios7-home-outline.png');
 
 class Home extends React.Component {
   static navigationOptions = {
     tabBarLabel: '首页',
     tabBarIcon: ({ tintColor }) =>
       <Image source={homeIconSrc} style={[styles.icon, { tintColor }]} />,
-    title: '消防设施巡检系统'
+    title: '消防设施巡检系统',
+    headerStyle: styles.headerStyle,
+    headerTitleStyle: styles.headerTitleStyle
   };
 
   render() {
