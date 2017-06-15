@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import { Image } from 'react-native';
 import { StackNavigator } from 'react-navigation';
+import { Container } from 'native-base';
 
 import styles from './styles';
+import TaskList from '../components/TaskList';
 
 const homeIconSrc = require('../../assets/icons/ionicons-2.0.1/ios7-home-outline.png');
 
@@ -18,10 +20,9 @@ class Home extends React.Component {
 
   render() {
     return (
-      <View>
-        <Text>未完成任务</Text>
-        <Text>已完成任务</Text>
-      </View>
+      <Container>
+        <TaskList />
+      </Container>
     );
   }
 }
