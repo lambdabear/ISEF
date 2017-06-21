@@ -1,10 +1,10 @@
 import React from 'react';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
 
-import HomeScreen from './screens/HomeScreen';
-import ScanScreen from './screens/ScanScreen';
-import NotificationsScreen from './screens/NotificationsScreen';
-import MeScreen from './screens/MeScreen';
+import HomeScreen from './screens/home/HomeScreen';
+import ScanScreen from './screens/scan/ScanScreen';
+import NotificationsScreen from './screens/notification/NotificationScreen';
+import MeScreen from './screens/me/MeScreen';
 
 const MainScreenNavigator = TabNavigator(
   {
@@ -22,7 +22,7 @@ const MainScreenNavigator = TabNavigator(
       labelStyle: {
         fontSize: 10
       },
-      activeTintColor: '#e91e63'
+      activeTintColor: 'steelblue' // '#e91e63'
     }
   }
 );
