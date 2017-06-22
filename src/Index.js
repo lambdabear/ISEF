@@ -1,5 +1,6 @@
 import React from 'react';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
+import { arrayOf, shape, string } from 'prop-types';
 
 import HomeScreen from './screens/home/HomeScreen';
 import ScanScreen from './screens/scan/ScanScreen';
@@ -27,6 +28,37 @@ const MainScreenNavigator = TabNavigator(
   }
 );
 
-const App = () => <MainScreenNavigator />;
+MainScreenNavigator.propTypes = {
+  screenProps: shape({
+    inCompleteTasks: arrayOf(
+      shape({
+        id: string.isRequired,
+        title: string.isRequired,
+        startTime: string,
+        endTime: string
+      })
+    ).isRequired,
+    completeTasks: arrayOf(
+      shape({
+        id: string.isRequired,
+        title: string.isRequired,
+        startTime: string,
+        endTime: string
+      })
+    ).isRequired
+  }).isRequired
+};
+
+const tasks = [
+  { id: 'task20170607001', title: '酒店巡检', startTime: '6月7日', endTime: '7月3日' },
+  { id: 'task20170607002', title: '酒店巡检', startTime: '6月7日', endTime: '7月3日' }
+];
+
+const screenProps = {
+  inCompleteTasks: tasks,
+  completeTasks: tasks
+};
+
+const App = () => <MainScreenNavigator screenProps={screenProps} />;
 
 export default App;
