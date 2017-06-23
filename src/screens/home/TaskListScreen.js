@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from 'native-base';
-import { func, arrayOf, shape, string } from 'prop-types';
+import { func, arrayOf, shape, string, bool } from 'prop-types';
 
 import styles from '../styles';
 import TaskList from '../../components/TaskList';
@@ -17,33 +17,42 @@ class TaskListScreen extends React.Component {
       navigate: func.isRequired
     }).isRequired,
     screenProps: shape({
-      inCompleteTasks: arrayOf(
-        shape({
-          id: string.isRequired,
-          title: string.isRequired,
-          startTime: string,
-          endTime: string
-        })
-      ).isRequired,
-      completeTasks: arrayOf(
-        shape({
-          id: string.isRequired,
-          title: string.isRequired,
-          startTime: string,
-          endTime: string
-        })
-      ).isRequired
+      homeScreenProps: shape({
+        taskListProps: shape({
+          incompleteTasks: arrayOf(
+            shape({
+              id: string.isRequired,
+              title: string.isRequired,
+              startTime: string,
+              endTime: string,
+              warning: bool
+            })
+          ).isRequired,
+          completeTasks: arrayOf(
+            shape({
+              id: string.isRequired,
+              title: string.isRequired,
+              startTime: string,
+              endTime: string,
+              warning: bool
+            })
+          ).isRequired
+        }).isRequired
+      }).isRequired
     }).isRequired
   };
 
   render() {
-    const { inCompleteTasks, completeTasks } = this.props.screenProps;
+    const {
+      incompleteTasks,
+      completeTasks
+    } = this.props.screenProps.homeScreenProps.taskListProps;
     const { navigate } = this.props.navigation;
     return (
       <Container>
         <TaskList
           navigate={navigate}
-          inCompleteTasks={inCompleteTasks}
+          incompleteTasks={incompleteTasks}
           completeTasks={completeTasks}
         />
       </Container>

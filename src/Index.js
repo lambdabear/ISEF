@@ -1,11 +1,12 @@
 import React from 'react';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
-import { arrayOf, shape, string } from 'prop-types';
+import { arrayOf, shape, string, bool } from 'prop-types';
 
 import HomeScreen from './screens/home/HomeScreen';
 import ScanScreen from './screens/scan/ScanScreen';
 import NotificationsScreen from './screens/notification/NotificationScreen';
 import MeScreen from './screens/me/MeScreen';
+import screenProps from './dataSource';
 
 const MainScreenNavigator = TabNavigator(
   {
@@ -30,33 +31,45 @@ const MainScreenNavigator = TabNavigator(
 
 MainScreenNavigator.propTypes = {
   screenProps: shape({
-    inCompleteTasks: arrayOf(
-      shape({
-        id: string.isRequired,
-        title: string.isRequired,
-        startTime: string,
-        endTime: string
-      })
-    ).isRequired,
-    completeTasks: arrayOf(
-      shape({
-        id: string.isRequired,
-        title: string.isRequired,
-        startTime: string,
-        endTime: string
-      })
-    ).isRequired
+    homeScreenProps: shape({
+      taskListProps: shape({
+        incompleteTasks: arrayOf(
+          shape({
+            id: string.isRequired,
+            title: string.isRequired,
+            startTime: string.isRequired,
+            endTime: string.isRequired,
+            warning: bool
+          })
+        ).isRequired,
+        completeTasks: arrayOf(
+          shape({
+            id: string.isRequired,
+            title: string.isRequired,
+            startTime: string.isRequired,
+            endTime: string.isRequired,
+            warning: bool
+          }).isRequired
+        ).isRequired
+      }).isRequired,
+      taskDetailsProps: shape({
+        task: shape({
+          title: string.isRequired,
+          startTime: string.isRequired,
+          endTime: string.isRequired,
+          note: string.isRequired,
+          warning: bool,
+          facilities: arrayOf(
+            shape({
+              id: string.isRequired,
+              name: string.isRequired,
+              checked: bool.isRequired
+            }).isRequired
+          ).isRequired
+        }).isRequired
+      }).isRequired
+    }).isRequired
   }).isRequired
-};
-
-const tasks = [
-  { id: 'task20170607001', title: '酒店巡检', startTime: '6月7日', endTime: '7月3日' },
-  { id: 'task20170607002', title: '酒店巡检', startTime: '6月7日', endTime: '7月3日' }
-];
-
-const screenProps = {
-  inCompleteTasks: tasks,
-  completeTasks: tasks
 };
 
 const App = () => <MainScreenNavigator screenProps={screenProps} />;

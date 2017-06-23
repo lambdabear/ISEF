@@ -2,7 +2,7 @@ import React from 'react';
 import { ListItem, Text, Icon, Left, Body, Right } from 'native-base';
 import { string, bool, func } from 'prop-types';
 
-const IncompleteTask = ({ title, startTime, endTime, warnning, navigate }) =>
+const IncompleteTask = ({ title, startTime, endTime, warning, navigate }) =>
   <ListItem
     icon
     onPress={() => {
@@ -17,7 +17,7 @@ const IncompleteTask = ({ title, startTime, endTime, warnning, navigate }) =>
       <Text>{title}</Text>
       <Text
         style={
-          warnning
+          warning
             ? { fontSize: 9, color: 'red' }
             : { fontSize: 9, color: 'green' }
         }
@@ -34,14 +34,14 @@ IncompleteTask.propTypes = {
   title: string.isRequired,
   startTime: string,
   endTime: string,
-  warnning: bool,
+  warning: bool,
   navigate: func.isRequired
 };
 
 IncompleteTask.defaultProps = {
   startTime: '',
   endTime: '',
-  warnning: false
+  warning: false
 };
 
 export default IncompleteTask;

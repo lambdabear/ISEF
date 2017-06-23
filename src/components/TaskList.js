@@ -1,23 +1,24 @@
 import React from 'react';
 import { Container, Content, ListItem, Text } from 'native-base';
-import { arrayOf, shape, string, func } from 'prop-types';
+import { arrayOf, shape, string, func, bool } from 'prop-types';
 
 import IncompleteTask from './IncompleteTask';
 import CompleteTask from './CompleteTask';
 
-const TaskList = ({ inCompleteTasks, completeTasks, navigate }) =>
+const TaskList = ({ incompleteTasks, completeTasks, navigate }) =>
   <Container>
     <Content>
       <ListItem itemHeader first style={{ paddingBottom: 0 }}>
         <Text>未完成任务</Text>
       </ListItem>
-      {inCompleteTasks.map(task =>
+      {incompleteTasks.map(task =>
         <IncompleteTask
           title={task.title}
           startTime={task.startTime}
           endTime={task.endTime}
           navigate={navigate}
           key={task.id}
+          warning={task.warning}
         />
       )}
       <ListItem itemHeader style={{ paddingBottom: 0 }}>
@@ -30,18 +31,20 @@ const TaskList = ({ inCompleteTasks, completeTasks, navigate }) =>
           endTime={task.endTime}
           navigate={navigate}
           key={task.id}
+          warning={task.warning}
         />
       )}
     </Content>
   </Container>;
 
 TaskList.propTypes = {
-  inCompleteTasks: arrayOf(
+  incompleteTasks: arrayOf(
     shape({
       id: string.isRequired,
       title: string.isRequired,
       startTime: string,
-      endTime: string
+      endTime: string,
+      warning: bool
     })
   ).isRequired,
   completeTasks: arrayOf(
@@ -49,7 +52,8 @@ TaskList.propTypes = {
       id: string.isRequired,
       title: string.isRequired,
       startTime: string,
-      endTime: string
+      endTime: string,
+      warning: bool
     })
   ).isRequired,
   navigate: func.isRequired

@@ -12,21 +12,18 @@ import {
   Body,
   Text
 } from 'native-base';
+import { string, shape, arrayOf, bool } from 'prop-types';
 
 import FacilityList from './FacilityList';
 
-const facilities = [
-  { id: 'f20150031', name: '节能大厦1层31灭火器', checked: true },
-  { id: 'f20150032', name: '节能大厦1层32灭火器', checked: false },
-  { id: 'f20150034', name: '节能大厦1层34灭火器', checked: false },
-  { id: 'f20150035', name: '节能大厦1层35灭火器', checked: false },
-  { id: 'f20150036', name: '节能大厦1层36灭火器', checked: false },
-  { id: 'f20150037', name: '节能大厦1层37灭火器', checked: false },
-  { id: 'f20150038', name: '节能大厦1层38灭火器', checked: false },
-  { id: 'f20150033', name: '节能大厦1层33灭火器', checked: true }
-];
-
-const TaskDetails = () =>
+const TaskDetails = ({
+  title,
+  startTime,
+  endTime,
+  note,
+  facilities,
+  warning
+}) =>
   <Container>
     <Content>
       <Card>
@@ -35,7 +32,7 @@ const TaskDetails = () =>
             <Icon name="ios-clipboard-outline" />
             <Body>
               <Text>
-                成都国际科技节能大厦例行巡检
+                {title}
               </Text>
             </Body>
           </Left>
@@ -45,13 +42,15 @@ const TaskDetails = () =>
             <Icon name="ios-clock-outline" />
             <Body>
               <Text>开始时间</Text>
-              <Text note>6月14日</Text>
+              <Text note>{startTime}</Text>
             </Body>
           </Left>
           <Right>
             <Body>
               <Text>截止时间</Text>
-              <Text note>6月17日</Text>
+              <Text note style={warning ? { color: 'red' } : { color: 'grey' }}>
+                {endTime}
+              </Text>
             </Body>
           </Right>
         </CardItem>
@@ -63,7 +62,7 @@ const TaskDetails = () =>
                 备注
               </Text>
               <Text note>
-                相关注意事项
+                {note}
               </Text>
             </Body>
           </Left>
@@ -82,5 +81,24 @@ const TaskDetails = () =>
       </List>
     </Content>
   </Container>;
+
+TaskDetails.propTypes = {
+  title: string.isRequired,
+  startTime: string.isRequired,
+  endTime: string.isRequired,
+  note: string.isRequired,
+  warning: bool,
+  facilities: arrayOf(
+    shape({
+      id: string.isRequired,
+      name: string.isRequired,
+      checked: bool.isRequired
+    }).isRequired
+  ).isRequired
+};
+
+TaskDetails.defaultProps = {
+  warning: false
+};
 
 export default TaskDetails;

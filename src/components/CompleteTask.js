@@ -1,13 +1,13 @@
 import React from 'react';
 import { ListItem, Text, Icon, Left, Body, Right } from 'native-base';
-import { string, func } from 'prop-types';
+import { string, func, bool } from 'prop-types';
 
-const CompleteTask = ({ title, startTime, endTime, navigate }) =>
+const CompleteTask = ({ title, startTime, endTime, navigate, warning }) =>
   <ListItem
     icon
     onPress={() => {
       navigate('HomeTaskDetails');
-      // dispatch redux action
+      // to do: dispatch redux action for take correct data for taskDetailsProps
     }}
   >
     <Left>
@@ -15,7 +15,13 @@ const CompleteTask = ({ title, startTime, endTime, navigate }) =>
     </Left>
     <Body>
       <Text>{title}</Text>
-      <Text style={{ fontSize: 9, color: 'grey' }}>
+      <Text
+        style={
+          warning
+            ? { fontSize: 9, color: 'red' }
+            : { fontSize: 9, color: 'grey' }
+        }
+      >
         {startTime} - {endTime}
       </Text>
     </Body>
@@ -28,13 +34,14 @@ CompleteTask.propTypes = {
   title: string.isRequired,
   startTime: string,
   endTime: string,
-  navigate: func.isRequired
+  navigate: func.isRequired,
+  warning: bool
 };
 
 CompleteTask.defaultProps = {
   startTime: '',
   endTime: '',
-  warnning: false
+  warning: false
 };
 
 export default CompleteTask;
