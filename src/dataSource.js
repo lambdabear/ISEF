@@ -85,10 +85,10 @@ const facilities = [
 ];
 
 const task = {
-  title: '酒店巡检',
-  startTime: '6月7日',
-  endTime: '7月3日',
-  note: '相关注意事项',
+  title: '节能大厦1层例行巡检',
+  startTime: '7月7日',
+  endTime: '7月13日',
+  note: '请按相关消防设施法规进行检查',
   // warning: true,
   facilities
 };
