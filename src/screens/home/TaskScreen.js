@@ -2,14 +2,14 @@ import React from 'react';
 import { Container } from 'native-base';
 import { string, shape, arrayOf, bool } from 'prop-types';
 
-import styles from '../styles';
+import screenStyles from '../screenStyles';
 import TaskDetails from '../../components/TaskDetails';
 
 class TaskScreen extends React.Component {
   static navigationOptions = {
     title: '任务详情',
-    headerStyle: styles.headerStyle,
-    headerTitleStyle: styles.headerTitleStyle
+    headerStyle: screenStyles.headerStyle,
+    headerTitleStyle: screenStyles.headerTitleStyle
   };
 
   static propTypes = {

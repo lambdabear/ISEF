@@ -68,6 +68,42 @@ MainScreenNavigator.propTypes = {
           ).isRequired
         }).isRequired
       }).isRequired
+    }).isRequired,
+
+    scanScreenProps: shape({
+      checkProps: shape({
+        checkList: arrayOf(
+          shape({
+            id: string.isRequired,
+            content: string.isRequired,
+            checkState: string.isRequired,
+            needRecord: bool
+          }).isRequired
+        ).isRequired
+      }).isRequired
+    }).isRequired,
+
+    notificationScreenProps: shape({
+      notificationListProps: shape({
+        notices: arrayOf(
+          shape({
+            id: string.isRequired,
+            content: string.isRequired
+          }).isRequired
+        ).isRequired
+      }).isRequired
+    }).isRequired,
+
+    meScreenProps: shape({
+      meDetailProps: shape({
+        userInfo: shape({
+          name: string,
+          email: string.isRequired,
+          completeNum: string,
+          incompleteNum: string,
+          overDueNum: string
+        }).isRequired
+      }).isRequired
     }).isRequired
   }).isRequired
 };
