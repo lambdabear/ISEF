@@ -5,7 +5,7 @@ import { arrayOf, shape, string, bool } from 'prop-types';
 
 import TaskScreen from './TaskScreen';
 import TaskListScreen from './TaskListScreen';
-import styles from '../styles';
+import screenStyles from '../screenStyles';
 
 const homeIconSrc = require('../../../assets/icons/ionicons-2.0.1/ios7-home.png');
 
@@ -58,7 +58,7 @@ HomeScreen.propTypes = {
 };
 
 const tabBarIcon = ({ tintColor }) =>
-  <Image source={homeIconSrc} style={[styles.icon, { tintColor }]} />;
+  <Image source={homeIconSrc} style={[screenStyles.icon, { tintColor }]} />;
 
 tabBarIcon.propTypes = {
   tintColor: string.isRequired

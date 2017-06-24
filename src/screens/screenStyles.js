@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
+const screenStyles = StyleSheet.create({
   icon: {
     width: 26,
     height: 26
@@ -16,4 +16,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default styles;
+export default screenStyles;

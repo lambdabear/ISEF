@@ -3,7 +3,7 @@ import { Image } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import { string } from 'prop-types';
 
-import styles from '../styles';
+import screenStyles from '../screenStyles';
 import NotificationListScreen from './NotificationListScreen';
 
 const bellIconSrc = require('../../../assets/icons/ionicons-2.0.1/ios7-bell.png');
@@ -13,7 +13,7 @@ const NotificationScreen = StackNavigator({
 });
 
 const tabBarIcon = ({ tintColor }) =>
-  <Image source={bellIconSrc} style={[styles.icon, { tintColor }]} />;
+  <Image source={bellIconSrc} style={[screenStyles.icon, { tintColor }]} />;
 
 tabBarIcon.propTypes = {
   tintColor: string.isRequired

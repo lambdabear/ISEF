@@ -37,6 +37,8 @@
     "prop-types": "^15.5.10",
     "react": "16.0.0-alpha.6",
     "react-native": "^0.44.0",
+    "react-native-animatable": "^1.2.2",
+    "react-native-autogrow-textinput": "^4.0.0",
     "react-navigation": "^1.0.0-beta.11"
   }
 }
