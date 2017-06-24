@@ -7,7 +7,7 @@ import TaskList from '../../components/TaskList';
 
 class TaskListScreen extends React.Component {
   static navigationOptions = {
-    title: '消防设施巡检系统',
+    title: '任务',
     headerStyle: styles.headerStyle,
     headerTitleStyle: styles.headerTitleStyle
   };
