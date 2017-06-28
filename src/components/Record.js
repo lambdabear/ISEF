@@ -4,7 +4,7 @@ import { string } from 'prop-types';
 
 import { AutoGrowingTextInput } from 'react-native-autogrow-textinput';
 
-const IsIOS = Platform.OS === 'android';
+const IsIOS = Platform.OS === 'ios';
 const styles = StyleSheet.create({
   textInputContainer: {
     flexDirection: 'row',
@@ -27,7 +27,7 @@ const Record = ({ id }) =>
     style={styles.textInput}
     placeholder={'检测记录'}
     onChange={event => {
-      // dispatch an action include id for saving user's input text
+      // Todo, dispatch an action include id for saving user's input text
     }}
   />;
 

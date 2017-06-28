@@ -136,7 +136,8 @@ const checkList = [
   {
     id: 'c201423#jinan#201706030008',
     content: '灭火器是否未开启、喷射过。',
-    checkState: 'init'
+    checkState: 'init',
+    needRecord: true
   }
 ];
 
