@@ -70,12 +70,14 @@ const TaskDetails = ({
       </Card>
       <List>
         <ListItem itemHeader first style={{ paddingBottom: 0 }}>
-          <Left>
-            <Icon name="ios-pint-outline" />
-          </Left>
           <Text>
             设施列表
           </Text>
+          {/*
+            <Right style={{ paddingRight: 8 }}>
+              <Icon name="cloud-upload" />
+            </Right>
+          */}
         </ListItem>
         <FacilityList facilities={facilities} />
       </List>
@@ -92,7 +94,9 @@ TaskDetails.propTypes = {
     shape({
       id: string.isRequired,
       name: string.isRequired,
-      checked: bool.isRequired
+      checked: bool.isRequired,
+      postSuccess: bool.isRequired,
+      uploading: bool.isRequired
     }).isRequired
   ).isRequired
 };

@@ -63,7 +63,9 @@ MainScreenNavigator.propTypes = {
             shape({
               id: string.isRequired,
               name: string.isRequired,
-              checked: bool.isRequired
+              checked: bool.isRequired,
+              postSuccess: bool.isRequired,
+              uploading: bool.isRequired
             }).isRequired
           ).isRequired
         }).isRequired

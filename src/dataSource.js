@@ -74,14 +74,62 @@ const incompleteTasks = [
 ];
 
 const facilities = [
-  { id: 'f20150031', name: '节能大厦1层31灭火器', checked: true },
-  { id: 'f20150032', name: '节能大厦1层32灭火器', checked: false },
-  { id: 'f20150034', name: '节能大厦1层34灭火器', checked: false },
-  { id: 'f20150035', name: '节能大厦1层35灭火器', checked: false },
-  { id: 'f20150036', name: '节能大厦1层36灭火器', checked: false },
-  { id: 'f20150037', name: '节能大厦1层37灭火器', checked: false },
-  { id: 'f20150038', name: '节能大厦1层38灭火器', checked: false },
-  { id: 'f20150033', name: '节能大厦1层33灭火器', checked: true }
+  {
+    id: 'f20150031',
+    name: '节能大厦1层31灭火器',
+    checked: true,
+    postSuccess: true,
+    uploading: false
+  },
+  {
+    id: 'f20150032',
+    name: '节能大厦1层32灭火器',
+    checked: false,
+    postSuccess: false,
+    uploading: false
+  },
+  {
+    id: 'f20150034',
+    name: '节能大厦1层34灭火器',
+    checked: true,
+    postSuccess: false,
+    uploading: false
+  },
+  {
+    id: 'f20150035',
+    name: '节能大厦1层35灭火器',
+    checked: true,
+    postSuccess: false,
+    uploading: true
+  },
+  {
+    id: 'f20150036',
+    name: '节能大厦1层36灭火器',
+    checked: false,
+    postSuccess: false,
+    uploading: false
+  },
+  {
+    id: 'f20150037',
+    name: '节能大厦1层37灭火器',
+    checked: false,
+    postSuccess: false,
+    uploading: false
+  },
+  {
+    id: 'f20150038',
+    name: '节能大厦1层38灭火器',
+    checked: false,
+    postSuccess: false,
+    uploading: false
+  },
+  {
+    id: 'f20150033',
+    name: '节能大厦1层33灭火器',
+    checked: true,
+    postSuccess: true,
+    uploading: false
+  }
 ];
 
 const task = {

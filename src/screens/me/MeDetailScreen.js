@@ -5,14 +5,6 @@ import { shape, string } from 'prop-types';
 import screenStyles from '../screenStyles';
 import Profile from '../../components/Profile';
 
-// const userInfo = {
-//   name: '乔峰',
-//   email: 'qiaofeng@mail.com',
-//   overDueNum: '1',
-//   completeNum: '16',
-//   incompleteNum: '3'
-// };
-
 class MeDetailScreen extends React.Component {
   static navigationOptions = {
     title: '我',
