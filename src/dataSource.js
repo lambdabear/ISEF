@@ -145,47 +145,67 @@ const checkList = [
   {
     id: 'c201423#jinan#201706030001',
     content: '灭火器的铭牌是否无残缺，并清晰明了；',
-    checkState: 'init'
+    checkState: 'init',
+    needRecord: false,
+    record: '',
+    needPhoto: false
   },
   {
     id: 'c201423#jinan#201706030002',
     content: '灭火器铭牌上关于灭火剂、驱动气体的种类、充装压力、总质量、灭火级别、制造厂名和生产日期或维修日期等标志及操作说明是否齐全；',
-    checkState: 'init'
+    checkState: 'init',
+    needRecord: false,
+    record: '',
+    needPhoto: false
   },
   {
     id: 'c201423#jinan#201706030003',
     content: '灭火器的铅封、销闩等保险装置是否未损坏或遗失；',
-    checkState: 'init'
+    checkState: 'init',
+    needRecord: false,
+    record: '',
+    needPhoto: false
   },
   {
     id: 'c201423#jinan#201706030004',
     content: '灭火器的筒体是否无明显的损伤（磕伤、划伤）、缺陷、锈蚀（特别是筒底和焊缝）、泄漏；',
     checkState: 'init',
-    needRecord: true
+    needRecord: true,
+    record: '',
+    needPhoto: false
   },
   {
     id: 'c201423#jinan#201706030005',
     content: '灭火器喷射软管是否完好，无明显龟裂，喷嘴不堵塞；',
     checkState: 'init',
-    needRecord: true
+    needRecord: true,
+    record: '喷嘴堵塞',
+    needPhoto: true
   },
   {
     id: 'c201423#jinan#201706030006',
     content:
       '灭火器的驱动气体压力是否在工作压力范围内（贮压式灭火器查看压力指示器是否指示在绿区范围内，二氧化碳灭火器和储气瓶式灭火器可用称重法检查）；',
     checkState: 'init',
-    needRecord: true
+    needRecord: true,
+    record: '',
+    needPhoto: false
   },
   {
     id: 'c201423#jinan#201706030007',
     content: '灭火器的零部件是否齐全，并且无松动、脱落或损伤；',
-    checkState: 'init'
+    checkState: 'init',
+    needRecord: false,
+    record: '',
+    needPhoto: false
   },
   {
     id: 'c201423#jinan#201706030008',
     content: '灭火器是否未开启、喷射过。',
     checkState: 'init',
-    needRecord: true
+    needRecord: true,
+    record: '',
+    needPhoto: false
   }
 ];
 
@@ -205,6 +225,11 @@ const notices = [
   { id: 'note2017050500001', content: '放假通知： 公司五一长假按国家标准放假时间调休。' }
 ];
 
+const currentRecord = {
+  id: 'c201423#jinan#201706030006',
+  record: '记录详情'
+};
+
 const screenProps = {
   homeScreenProps: {
     taskListProps: {
@@ -218,7 +243,8 @@ const screenProps = {
   scanScreenProps: {
     checkProps: {
       checkList
-    }
+    },
+    checkRecordProps: { ...currentRecord }
   },
   notificationScreenProps: {
     notificationListProps: {

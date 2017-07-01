@@ -79,9 +79,15 @@ MainScreenNavigator.propTypes = {
             id: string.isRequired,
             content: string.isRequired,
             checkState: string.isRequired,
-            needRecord: bool
+            needRecord: bool.isRequired,
+            record: string.isRequired,
+            needPhoto: bool.isRequired
           }).isRequired
         ).isRequired
+      }).isRequired,
+      checkRecordProps: shape({
+        id: string.isRequired,
+        record: string.isRequired
       }).isRequired
     }).isRequired,
 

@@ -10,87 +10,86 @@ import {
   CheckBox,
   Content
 } from 'native-base';
-import { string, bool } from 'prop-types';
+import { string, bool, func } from 'prop-types';
 
-import Record from './Record';
-
-const NoRecordItem = ({ id, content, checkState }) =>
+const CheckItem = ({
+  id,
+  content,
+  checkState,
+  needRecord,
+  record,
+  needPhoto,
+  navigate
+}) =>
   <Content>
-    <CardItem>
-      <Left>
-        <Icon name="ios-clipboard-outline" />
-        <Body>
-          <Text>
-            {content}
+    <Card>
+      <CardItem>
+        <Left>
+          <Icon name="ios-clipboard-outline" />
+          <Body>
+            <Text>
+              {content}
+            </Text>
+          </Body>
+        </Left>
+      </CardItem>
+      <CardItem>
+        <Left>
+          <Icon
+            name="ios-camera-outline"
+            style={needPhoto ? { color: 'orange' } : { color: 'grey' }}
+            onPress={() => {
+              // Todo, use camera to take photo,
+              // save the img file src to the var with id;
+            }}
+          />
+          <Text style={{ color: 'green' }}>合格</Text>
+          <CheckBox
+            color="green"
+            checked={checkState === 'qualified'}
+            onPress={() => {
+              // Todo, dispatch an action to change
+              // the checkState with id to 'qualified';
+            }}
+          />
+          <Text style={{ color: 'red' }}>{'    '}不合格</Text>
+          <CheckBox
+            color="red"
+            checked={checkState === 'unqualified'}
+            onPress={() => {
+              // Todo, dispatch an action to change
+              // the checkState with id to 'unqualified';
+            }}
+          />
+        </Left>
+        <Right>
+          <Icon
+            name="create"
+            style={needRecord ? { color: 'orange' } : { color: 'grey' }}
+            onPress={() => {
+              navigate('CheckRecord');
+            }}
+          />
+        </Right>
+      </CardItem>
+      {record !== '' &&
+        <CardItem>
+          <Text style={{ color: 'orange' }}>
+            检测记录：
           </Text>
-        </Body>
-      </Left>
-    </CardItem>
-    <CardItem>
-      <Left>
-        <Icon
-          name="ios-camera-outline"
-          onPress={() => {
-            // todo, use camera to take photo,
-            // save the img file src to the var with id;
-          }}
-        />
-        <Text style={{ color: 'green' }}>合格</Text>
-        <CheckBox
-          color="green"
-          checked={checkState === 'qualified'}
-          onPress={() => {
-            // todo, dispatch an action to change
-            // the checkState with id to 'qualified';
-          }}
-        />
-        <Text style={{ color: 'red' }}>{'    '}不合格</Text>
-        <CheckBox
-          color="red"
-          checked={checkState === 'unqualified'}
-          onPress={() => {
-            // todo, dispatch an action to change
-            // the checkState with id to 'unqualified';
-          }}
-        />
-      </Left>
-      <Right>
-        <Icon
-          name="create"
-          onPress={() => {
-            // todo, dispatch an action to change
-            // the needRecord state with id to true;
-          }}
-        />
-      </Right>
-    </CardItem>
+          <Text style={{ color: 'grey' }}>{record}</Text>
+        </CardItem>}
+    </Card>
   </Content>;
-
-NoRecordItem.propTypes = {
-  id: string.isRequired,
-  content: string.isRequired,
-  checkState: string.isRequired
-};
-
-const CheckItem = ({ id, content, checkState, needRecord }) =>
-  needRecord
-    ? <Card>
-        <NoRecordItem id={id} content={content} checkState={checkState} />
-        <CardItem><Record id={id} /></CardItem>
-      </Card>
-    : <Card>
-        <NoRecordItem id={id} content={content} checkState={checkState} />
-      </Card>;
 
 CheckItem.propTypes = {
   id: string.isRequired,
   content: string.isRequired,
   checkState: string.isRequired,
-  needRecord: bool
-};
-
-CheckItem.defaultProps = {
-  needRecord: false
+  needRecord: bool.isRequired,
+  record: string.isRequired,
+  needPhoto: bool.isRequired,
+  navigate: func.isRequired
 };
 
 export default CheckItem;

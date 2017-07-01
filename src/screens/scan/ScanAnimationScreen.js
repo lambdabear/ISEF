@@ -23,15 +23,15 @@ class ScanAnimationScreen extends React.Component {
   };
 
   getFacilityInfo = rfidTag => {
-    // todo, return facility info, maybe promise
+    // Todo, return facility info, maybe promise
   };
 
   scanRFID = () => {
-    // todo, return RFID tag info, maybe promise
+    // Todo, return RFID tag info, maybe promise
   };
 
   updateFacilityState = () => {
-    // todo, maybe use async, process like
+    // Todo, maybe use async, process like
     // this.setState(this.getFacilityInfo(this.scanRFID()));
   };
 

@@ -6,12 +6,14 @@ import { arrayOf, shape, string, bool } from 'prop-types';
 import screenStyles from '../screenStyles';
 import ScanAnimationScreen from './ScanAnimationScreen';
 import CheckScreen from './CheckScreen';
+import CheckRecordScreen from './CheckRecordScreen';
 
 const scanIconSrc = require('../../../assets/icons/ionicons-2.0.1/ios7-barcode.png');
 
 const ScanScreen = StackNavigator({
   ScanHome: { screen: ScanAnimationScreen },
-  Check: { screen: CheckScreen }
+  Check: { screen: CheckScreen },
+  CheckRecord: { screen: CheckRecordScreen }
 });
 
 ScanScreen.propTypes = {
@@ -23,9 +25,15 @@ ScanScreen.propTypes = {
             id: string.isRequired,
             content: string.isRequired,
             checkState: string.isRequired,
-            needRecord: bool
+            needRecord: bool.isRequired,
+            record: string.isRequired,
+            needPhoto: bool.isRequired
           }).isRequired
         ).isRequired
+      }).isRequired,
+      checkRecordProps: shape({
+        id: string.isRequired,
+        record: string.isRequired
       }).isRequired
     }).isRequired
   }).isRequired

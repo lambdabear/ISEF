@@ -31,8 +31,8 @@ export default class LoadingAnimation extends Component {
       <Animated.Image
         style={{
           tintColor: 'orange',
-          width: 26,
-          height: 26,
+          width: 28,
+          height: 28,
           transform: [{ rotate: spin }]
         }}
         active

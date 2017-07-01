@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Content } from 'native-base';
-import { arrayOf, shape, string, bool } from 'prop-types';
+import { arrayOf, shape, string, bool, func } from 'prop-types';
 
 import screenStyles from '../screenStyles';
 import CheckList from '../../components/CheckList';
@@ -21,11 +21,16 @@ class CheckScreen extends React.Component {
               id: string.isRequired,
               content: string.isRequired,
               checkState: string.isRequired,
-              needRecord: bool
+              needRecord: bool.isRequired,
+              record: string.isRequired,
+              needPhoto: bool.isRequired
             }).isRequired
           ).isRequired
         }).isRequired
       }).isRequired
+    }).isRequired,
+    navigation: shape({
+      navigate: func.isRequired
     }).isRequired
   };
 
@@ -37,6 +42,7 @@ class CheckScreen extends React.Component {
             checkList={
               this.props.screenProps.scanScreenProps.checkProps.checkList
             }
+            navigate={this.props.navigation.navigate}
           />
         </Content>
       </Container>

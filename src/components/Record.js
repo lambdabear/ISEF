@@ -1,38 +1,58 @@
-import React from 'react';
-import { StyleSheet, Platform } from 'react-native';
-import { string } from 'prop-types';
-
-import { AutoGrowingTextInput } from 'react-native-autogrow-textinput';
+import React, { Component } from 'react';
+import { StyleSheet, Platform, TextInput } from 'react-native';
+import { Content, Button, Text } from 'native-base';
+import { string, func } from 'prop-types';
 
 const IsIOS = Platform.OS === 'ios';
 const styles = StyleSheet.create({
-  textInputContainer: {
-    flexDirection: 'row',
-    paddingLeft: 8,
-    paddingRight: 8
-  },
   textInput: {
     paddingLeft: 5,
     paddingBottom: 5,
-    fontSize: 15,
-    flex: 1,
+    borderColor: 'gray',
+    fontSize: 18,
     backgroundColor: 'white',
-    borderWidth: 0,
+    borderWidth: 1,
     borderRadius: IsIOS ? 4 : 0
   }
 });
 
-const Record = ({ id }) =>
-  <AutoGrowingTextInput
-    style={styles.textInput}
-    placeholder={'检测记录'}
-    onChange={event => {
-      // Todo, dispatch an action include id for saving user's input text
-    }}
-  />;
+export default class Record extends Component {
+  static propTypes = {
+    id: string.isRequired,
+    record: string.isRequired,
+    goBack: func.isRequired
+  };
 
-Record.propTypes = {
-  id: string.isRequired
-};
+  constructor(props) {
+    super(props);
+    this.state = { text: props.record };
+  }
 
-export default Record;
+  render() {
+    return (
+      <Content>
+        <TextInput
+          style={styles.textInput}
+          editable
+          maxLength={200}
+          underlineColorAndroid="transparent"
+          textAlignVertical={'top'}
+          multiline
+          numberOfLines={12}
+          onChangeText={text => this.setState({ text })}
+          value={this.state.text}
+        />
+        <Button
+          block
+          info
+          onPress={() => {
+            this.props.goBack();
+            // Todo, dispatch an action to save input to redux state
+          }}
+        >
+          <Text>确定</Text>
+        </Button>
+      </Content>
+    );
+  }
+}

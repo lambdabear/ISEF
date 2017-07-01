@@ -8,32 +8,36 @@ import CompleteTask from './CompleteTask';
 const TaskList = ({ incompleteTasks, completeTasks, navigate }) =>
   <Container>
     <Content>
-      <ListItem itemHeader first style={{ paddingBottom: 0 }}>
-        <Text>未完成任务</Text>
-      </ListItem>
-      {incompleteTasks.map(task =>
-        <IncompleteTask
-          title={task.title}
-          startTime={task.startTime}
-          endTime={task.endTime}
-          navigate={navigate}
-          key={task.id}
-          warning={task.warning}
-        />
-      )}
-      <ListItem itemHeader style={{ paddingBottom: 0 }}>
-        <Text>已完成任务</Text>
-      </ListItem>
-      {completeTasks.map(task =>
-        <CompleteTask
-          title={task.title}
-          startTime={task.startTime}
-          endTime={task.endTime}
-          navigate={navigate}
-          key={task.id}
-          warning={task.warning}
-        />
-      )}
+      <Content style={{ backgroundColor: 'white', paddingBottom: 12 }}>
+        <ListItem itemHeader first style={{ paddingBottom: 0 }}>
+          <Text>未完成任务</Text>
+        </ListItem>
+        {incompleteTasks.map(task =>
+          <IncompleteTask
+            title={task.title}
+            startTime={task.startTime}
+            endTime={task.endTime}
+            navigate={navigate}
+            key={task.id}
+            warning={task.warning}
+          />
+        )}
+      </Content>
+      <Content>
+        <ListItem itemHeader style={{ paddingBottom: 0 }}>
+          <Text>已完成任务</Text>
+        </ListItem>
+        {completeTasks.map(task =>
+          <CompleteTask
+            title={task.title}
+            startTime={task.startTime}
+            endTime={task.endTime}
+            navigate={navigate}
+            key={task.id}
+            warning={task.warning}
+          />
+        )}
+      </Content>
     </Content>
   </Container>;
 

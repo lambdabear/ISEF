@@ -33,13 +33,11 @@
   "dependencies": {
     "@expo/vector-icons": "^5.0.0",
     "expo": "^17.0.0",
-    "native-base": "^2.1.5",
+    "native-base": "^2.2.0",
     "prop-types": "^15.5.10",
     "react": "16.0.0-alpha.6",
     "react-native": "^0.44.0",
     "react-native-animatable": "^1.2.2",
-    "react-native-autogrow-textinput": "^4.0.0",
-    "react-native-keyboard-aware-scroll-view": "^0.2.9",
     "react-navigation": "^1.0.0-beta.11"
   }
 }

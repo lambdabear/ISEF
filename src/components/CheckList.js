@@ -1,10 +1,10 @@
 import React from 'react';
 import { Content, Button, Text } from 'native-base';
-import { arrayOf, shape, string } from 'prop-types';
+import { arrayOf, shape, string, func, bool } from 'prop-types';
 
 import CheckItem from './CheckItem';
 
-const CheckList = ({ checkList }) =>
+const CheckList = ({ checkList, navigate }) =>
   <Content>
     {checkList.map(checkItem =>
       <CheckItem
@@ -13,6 +13,9 @@ const CheckList = ({ checkList }) =>
         content={checkItem.content}
         checkState={checkItem.checkState}
         needRecord={checkItem.needRecord}
+        record={checkItem.record}
+        needPhoto={checkItem.needPhoto}
+        navigate={navigate}
       />
     )}
     <Button block success>
@@ -25,9 +28,13 @@ CheckList.propTypes = {
     shape({
       id: string.isRequired,
       content: string.isRequired,
-      checkState: string.isRequired
+      checkState: string.isRequired,
+      needRecord: bool.isRequired,
+      record: string.isRequired,
+      needPhoto: bool.isRequired
     }).isRequired
-  ).isRequired
+  ).isRequired,
+  navigate: func.isRequired
 };
 
 export default CheckList;
