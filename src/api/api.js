@@ -1,83 +1,62 @@
-import { CALL_API } from 'redux-api-middleware';
 import { dispatch } from '../store/store';
+import config from './apiConfig';
+import {
+  createLoginAction,
+  createGetUndoTasksAticon,
+  createGetCompleteTasksAticon
+  // createGetFacilitiesAction,
+  // createGetCheckPatternsAction,
+  // createPostCheckAction
+} from './apiAction';
 
-const createLoginAction = (email, password, apiUrl) => ({
-  [CALL_API]: {
-    endpoint: `${apiUrl}/IseUsers/login`,
-    method: 'POST',
-    types: ['loginREQUEST', 'loginSUCCESS', 'loginFAILURE'],
-    body: JSON.stringify({
-      email,
-      password
-    })
-  }
-});
-
-const createGetUndoTasksAticon = (organizationID, userID, token, apiUrl) => ({
-  [CALL_API]: {
-    endpoint: `${apiUrl}/Organizations/${organizationID}/tasks`, // TODO, add query conditions
-    method: 'GET',
-    types: [
-      'getUndoTasksREQUEST',
-      'getUndoTasksSUCCESS',
-      'getUndoTasksFAILURE'
-    ],
-    headers: JSON.stringify({
-      Authorization: token
-    })
-  }
-});
-
-const createGetCompleteTasksAticon = (
-  organizationID,
-  userID,
-  token,
-  apiUrl
-) => ({
-  [CALL_API]: {
-    endpoint: `${apiUrl}/Organizations/${organizationID}/tasks`, // TODO, add query conditions
-    method: 'GET',
-    types: [
-      'getUndoTasksREQUEST',
-      'getUndoTasksSUCCESS',
-      'getUndoTasksFAILURE'
-    ],
-    headers: JSON.stringify({
-      Authorization: token
-    })
-  }
-});
-
-// TODO
-// const createGetFacilitiesAction = (...) => ({
-//   [CALL_API]: {
-//     ...
-//   }
-// })
-//
-// const createGetCheckPatternsAction = (...) => ({
-//   [CALL_API]: {
-//     ...
-//   }
-// })
-
-export const login = (email, password, apiUrl) => {
+const login = (email, password, apiUrl) => {
   dispatch(createLoginAction(email, password, apiUrl));
 };
 
-export const getUndoTasks = (organizationID, userID, token, apiUrl) => {
+const getUndoTasks = (organizationID, userID, token, apiUrl) => {
   dispatch(createGetUndoTasksAticon(organizationID, userID, token, apiUrl));
 };
 
-export const getCompleteTasks = (organizationID, userID, token, apiUrl) => {
+const getCompleteTasks = (organizationID, userID, token, apiUrl) => {
   dispatch(createGetCompleteTasksAticon(organizationID, userID, token, apiUrl));
 };
 
 // TODO
-// export const getFacilities = (...) => {
+// const getFacilities = (...) => {
 //   dispatch(createGetFacilitiesAction(...));
 // };
 //
-// export const getCheckPatterns = (...) => {
+// const getCheckPatterns = (...) => {
 //   dispatch(createGetCheckPatternsAction(...));
 // };
+//
+// const postCheck = (...) => {
+//   dispatch(createPostCheckAction(...));
+// };
+
+const { email, password, apiUrl, organizationID, userID, token } = config;
+
+export const doLogin = () => {
+  login(email, password, apiUrl);
+};
+
+export const doGetUndoTasks = () => {
+  getUndoTasks(organizationID, userID, token, apiUrl);
+};
+
+export const doGetCompleteTasks = () => {
+  getCompleteTasks(organizationID, userID, token, apiUrl);
+};
+
+// TODO
+// export const doGetFacilities = () => {
+//   getFacilities(...)
+// }
+//
+// export const doGetCheckPatterns = () => {
+//   getCheckPatterns(...)
+// }
+//
+// export const doPostCheck = (check) => {
+//   postCheck(... check)
+// }
