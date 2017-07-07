@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
@@ -11,7 +10,7 @@ import {
   GET_COMPLETE_TASKS_FAILURE
 } from '../actions/apiFSAs';
 
-function user(state = {}, action) {
+export function user(state = {}, action) {
   switch (action.type) {
     case LOGIN_SUCCESS: {
       const userInfo = {
@@ -29,7 +28,7 @@ function user(state = {}, action) {
   }
 }
 
-function undoTasks(state = {}, action) {
+export function undoTasks(state = {}, action) {
   switch (action.type) {
     case GET_UNDO_TASKS_SUCCESS: {
       const task = {
@@ -60,11 +59,3 @@ function undoTasks(state = {}, action) {
 // checkPatterns
 // checks
 // checkItems
-
-const reducer = combineReducers({
-  user,
-  undoTasks
-  // ...
-});
-
-export default reducer;
