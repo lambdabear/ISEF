@@ -1,10 +1,21 @@
 import { CALL_API } from 'redux-api-middleware';
+import {
+  LOGIN_REQUEST,
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+  GET_UNDO_TASKS_REQUEST,
+  GET_UNDO_TASKS_SUCCESS,
+  GET_UNDO_TASKS_FAILURE,
+  GET_COMPLETE_TASKS_REQUEST,
+  GET_COMPLETE_TASKS_SUCCESS,
+  GET_COMPLETE_TASKS_FAILURE
+} from '../actions/apiFSAs';
 
 export const createLoginAction = (email, password, apiUrl) => ({
   [CALL_API]: {
     endpoint: `${apiUrl}/IseUsers/login`,
     method: 'POST',
-    types: ['loginREQUEST', 'loginSUCCESS', 'loginFAILURE'],
+    types: [LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE],
     body: JSON.stringify({
       email,
       password
@@ -22,9 +33,9 @@ export const createGetUndoTasksAticon = (
     endpoint: `${apiUrl}/Organizations/${organizationID}/tasks`, // TODO, add query conditions
     method: 'GET',
     types: [
-      'getUndoTasksREQUEST',
-      'getUndoTasksSUCCESS',
-      'getUndoTasksFAILURE'
+      GET_UNDO_TASKS_REQUEST,
+      GET_UNDO_TASKS_SUCCESS,
+      GET_UNDO_TASKS_FAILURE
     ],
     headers: JSON.stringify({
       Authorization: token
@@ -42,9 +53,9 @@ export const createGetCompleteTasksAticon = (
     endpoint: `${apiUrl}/Organizations/${organizationID}/tasks`, // TODO, add query conditions
     method: 'GET',
     types: [
-      'getUndoTasksREQUEST',
-      'getUndoTasksSUCCESS',
-      'getUndoTasksFAILURE'
+      GET_COMPLETE_TASKS_REQUEST,
+      GET_COMPLETE_TASKS_SUCCESS,
+      GET_COMPLETE_TASKS_FAILURE
     ],
     headers: JSON.stringify({
       Authorization: token
