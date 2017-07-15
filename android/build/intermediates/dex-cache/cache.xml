@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.0.1_97f749ce9256502b58140cb6f82df8f40486eac1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.1/c7c4f9e35c2fd5900da24f9872e3971801f08ce0/okhttp-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/okhttp-3.4.1_2baa71bf1cbec1522149fb69c81b014bab876072.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_8214266ed9602faa6e784e000b87c094ea841b32.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.4.1/63994437f62bc861bc20c605d12962f7246116d1/okhttp-urlconnection-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="63994437f62bc861bc20c605d12962f7246116d1">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.4.1_a91fbb2c2bddf3d3a2ff74d477e2af74c1f9eccd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2668e49e4e31c7d451b76a36009b902bf44e0d70">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.0.1_8f0082bf12331eb132fbbe238e146ffd8f0bde7b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_b3e16b00de370606a40939397b8d51be8d65bdb3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_77100c3d772c30d3a2e709430fbf6e5d854f5d54.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/okio-1.9.0_b6cafa62d2d1861645ce4e6d65ac5440e073c400.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ba9b39366b723ccff6359d1117332968e98a4aca">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.0.1_9d0f5f5fcca3e2481b31e8c325c236ff65c1ecf4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/media/crazybear/SeagateDrive/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1_4c600ce57e410b79f9be9d5d3a6244bbfb91014d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5a61f17cd72e20aa4323cbf5f909b7c609619275">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.0.1_4ab3c74853ff328d0ceb3d084cb112e34bb14614.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.0.1_cc457cc394e9ef501b8327716ac16d46191b0a3d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-ws/3.4.1/8ace66ef7002d98f633377c9e67daeeb196d8c3b/okhttp-ws-3.4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8ace66ef7002d98f633377c9e67daeeb196d8c3b">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/okhttp-ws-3.4.1_dd33cc13d4481b43006216220f7af745a655e06c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_750c4da0262308f67bcab9a4e67941503a0af72a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_beb30d6376be170336186185daa29075f4aed1cc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_f4c10984f438741fe37227c64e0f77ca40503072.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.45.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0d3e48e200296061415952a358fad487e129adaa">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.45.1_28e24e1b31d90307a4df2a82e6abe300e32aba35.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_8d80869d5ef46610d8b999af6881818bad6998db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_8d5352ebf72b56044836226b4437cfe578dde5f1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.1_8dbfe9fa3b05b9d424055c12fda042d58c6577cc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.0.1_4d9b609469a79b7d50c70959ff5ad96e4e0208e6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/ISEFApp/react-native-nfc/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="cedc3528e519b8022216e23341dd37b33caa6da7">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/ISEFApp-react-native-nfc-unspecified_aac7f5742a7334b419780791b4b4812a4a2ce019.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/.gradle/caches/modules-2/files-2.1/com.google.code.ndef-tools-for-android/ndeftools/1.2.4/fb0e5fdf9120a3c45a2093cc83cb0706b824186f/ndeftools-1.2.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fb0e5fdf9120a3c45a2093cc83cb0706b824186f">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/ndeftools-1.2.4_b42739280f01208308b4dcdebadf1409e45ec9d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.45.1/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/home/crazybear/react-projects/ISEF/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_8ac85be9bd261d72ad4577f97b20e9edad276709.jar" />
+    </item>
+
+</items>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { func, shape } from 'prop-types';
+import NFC from 'react-native-nfc';
 
 import screenStyles from '../screenStyles';
 import ScanAnimation from '../../components/ScanAnimation';
@@ -19,11 +20,42 @@ class ScanAnimationScreen extends React.Component {
   };
 
   state = {
-    facilityInfo: 'none' // state in 'none' 'inTask' 'notInTask' 'notInDatabase'
+    facilityInfo: 'none', // state in 'none' 'inTask' 'notInTask' 'notInDatabase'
+    tagInfo: '',
+    NdefMessages: ''
   };
+
+  componentDidMount() {
+    this.bindNfcListener();
+  }
 
   getFacilityInfo = rfidTag => {
     // Todo, return facility info, maybe promise
+  };
+
+  bindNfcListener = () => {
+    NFC.addListener(payload => {
+      switch (payload.type) {
+        case 'TAG': {
+          const info = JSON.stringify(payload);
+          this.setState(prestate => ({
+            ...prestate,
+            tagInfo: info,
+            NdefMessages: ''
+          }));
+          break;
+        }
+        case 'NDEF': {
+          const info = JSON.stringify(payload);
+          this.setState(prestate => ({
+            ...prestate,
+            NdefMessages: info
+          }));
+          break;
+        }
+        default:
+      }
+    });
   };
 
   scanRFID = () => {
@@ -51,6 +83,12 @@ class ScanAnimationScreen extends React.Component {
             onPress={() => this.props.navigation.navigate('Check')}
           >
             请将手机靠近NFC标签
+          </Text>
+          <Text>
+            {this.state.tagInfo}
+          </Text>
+          <Text>
+            {this.state.NdefMessages}
           </Text>
         </View>
       </View>
