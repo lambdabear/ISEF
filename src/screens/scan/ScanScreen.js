@@ -7,13 +7,15 @@ import screenStyles from '../screenStyles';
 import ScanAnimationScreen from './ScanAnimationScreen';
 import CheckScreen from './CheckScreen';
 import CheckRecordScreen from './CheckRecordScreen';
+import CameraScreen from './CameraScreen';
 
 const scanIconSrc = require('../../../assets/icons/ionicons-2.0.1/ios7-barcode.png');
 
 const ScanScreen = StackNavigator({
   ScanHome: { screen: ScanAnimationScreen },
   Check: { screen: CheckScreen },
-  CheckRecord: { screen: CheckRecordScreen }
+  CheckRecord: { screen: CheckRecordScreen },
+  Camera: { screen: CameraScreen }
 });
 
 ScanScreen.propTypes = {

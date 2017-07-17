@@ -39,8 +39,7 @@ const CheckItem = ({
             name="ios-camera-outline"
             style={needPhoto ? { color: 'orange' } : { color: 'grey' }}
             onPress={() => {
-              // Todo, use camera to take photo,
-              // save the img file src to the var with id;
+              navigate('Camera');
             }}
           />
           <Text style={{ color: 'green' }}>合格</Text>
@@ -52,7 +51,9 @@ const CheckItem = ({
               // the checkState with id to 'qualified';
             }}
           />
-          <Text style={{ color: 'red' }}>{'    '}不合格</Text>
+          <Text style={{ color: 'red' }}>
+            {'    '}不合格
+          </Text>
           <CheckBox
             color="red"
             checked={checkState === 'unqualified'}
@@ -74,10 +75,10 @@ const CheckItem = ({
       </CardItem>
       {record !== '' &&
         <CardItem>
-          <Text style={{ color: 'orange' }}>
-            检测记录：
+          <Text style={{ color: 'orange' }}>检测记录：</Text>
+          <Text style={{ color: 'grey' }}>
+            {record}
           </Text>
-          <Text style={{ color: 'grey' }}>{record}</Text>
         </CardItem>}
     </Card>
   </Content>;
