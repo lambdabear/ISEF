@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Content } from 'native-base';
+import { Container, Content, Button, Text } from 'native-base';
 import { shape, string } from 'prop-types';
 
 import screenStyles from '../screenStyles';
@@ -28,6 +28,11 @@ class MeDetailScreen extends React.Component {
     }).isRequired
   };
 
+  exit = () => {
+    // TODO
+    // dispatch a action for clean all redux state
+  };
+
   render() {
     return (
       <Container>
@@ -37,6 +42,14 @@ class MeDetailScreen extends React.Component {
               this.props.screenProps.meScreenProps.meDetailProps.userInfo
             }
           />
+          <Button
+            full
+            light
+            style={{ backgroundColor: 'white' }}
+            onPress={this.exit}
+          >
+            <Text>退出</Text>
+          </Button>
         </Content>
       </Container>
     );

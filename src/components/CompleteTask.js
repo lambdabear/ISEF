@@ -11,10 +11,12 @@ const CompleteTask = ({ title, startTime, endTime, navigate, warning }) =>
     }}
   >
     <Left>
-      <Icon name="ios-checkmark-outline" style={{ color: 'green' }} />
+      <Icon name="ios-checkmark-circle-outline" style={{ color: 'green' }} />
     </Left>
     <Body>
-      <Text>{title}</Text>
+      <Text>
+        {title}
+      </Text>
       <Text
         style={
           warning
