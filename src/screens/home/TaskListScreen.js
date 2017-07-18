@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'native-base';
+import { Container, Header } from 'native-base';
 import { func, arrayOf, shape, string, bool } from 'prop-types';
 
 import screenStyles from '../screenStyles';
@@ -50,6 +50,7 @@ class TaskListScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <Container>
+        <Header androidStatusBarColor="steelblue" style={{ display: 'none' }} />
         <TaskList
           navigate={navigate}
           incompleteTasks={incompleteTasks}

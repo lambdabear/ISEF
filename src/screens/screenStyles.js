@@ -7,7 +7,7 @@ const screenStyles = StyleSheet.create({
   },
   headerStyle: {
     backgroundColor: 'steelblue',
-    height: 40
+    height: 35
     // paddingTop: 20
   },
   headerTitleStyle: {
