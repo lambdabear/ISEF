@@ -20,6 +20,7 @@ const MainScreenNavigator = TabNavigator(
   {
     tabBarComponent: TabBarBottom,
     tabBarPosition: 'bottom',
+    lazy: true,
     tabBarOptions: {
       labelStyle: {
         fontSize: 10
@@ -116,6 +117,40 @@ MainScreenNavigator.propTypes = {
   }).isRequired
 };
 
-const App = () => <MainScreenNavigator screenProps={screenProps} />;
+const getCurrentRouteName = navigationState => {
+  if (!navigationState) {
+    return null;
+  }
+  const route = navigationState.routes[navigationState.index];
+  // dive into nested navigators
+  if (route.routes) {
+    return getCurrentRouteName(route);
+  }
+  return route.routeName;
+};
+
+// const App = () => <MainScreenNavigator screenProps={screenProps} />;
+class App extends React.Component {
+  state = {
+    currentRouteName: 'HomeTaskList'
+  };
+
+  setCurrentRouteName = (prevState, currentState) => {
+    const currentScreen = getCurrentRouteName(currentState);
+    this.setState({ currentRouteName: currentScreen });
+  };
+
+  render() {
+    return (
+      <MainScreenNavigator
+        screenProps={{
+          ...screenProps,
+          currentRouteName: this.state.currentRouteName
+        }}
+        onNavigationStateChange={this.setCurrentRouteName}
+      />
+    );
+  }
+}
 
 export default App;

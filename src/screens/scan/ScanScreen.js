@@ -37,7 +37,8 @@ ScanScreen.propTypes = {
         id: string.isRequired,
         record: string.isRequired
       }).isRequired
-    }).isRequired
+    }).isRequired,
+    currentRouteName: string.isRequired
   }).isRequired
 };
 

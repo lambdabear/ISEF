@@ -1,10 +1,11 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import { func, shape } from 'prop-types';
+import { func, shape, string } from 'prop-types';
 import NFC from 'react-native-nfc';
 
 import screenStyles from '../screenStyles';
 import ScanAnimation from '../../components/ScanAnimation';
+import KeyboardNFCReader from '../../components/KeyboardNFCReader';
 
 class ScanAnimationScreen extends React.Component {
   static navigationOptions = {
@@ -14,6 +15,7 @@ class ScanAnimationScreen extends React.Component {
   };
 
   static propTypes = {
+    screenProps: shape({ currentRouteName: string.isRequired }).isRequired,
     navigation: shape({
       navigate: func.isRequired
     }).isRequired
@@ -29,9 +31,9 @@ class ScanAnimationScreen extends React.Component {
     this.bindNfcListener();
   }
 
-  getFacilityInfo = rfidTag => {
-    // Todo, return facility info, maybe promise
-  };
+  // getFacilityInfo = rfidTag => {
+  //   // Todo, return facility info, maybe promise
+  // };
 
   bindNfcListener = () => {
     NFC.addListener(payload => {
@@ -84,11 +86,20 @@ class ScanAnimationScreen extends React.Component {
           >
             请将手机靠近NFC标签
           </Text>
+          {this.props.screenProps.currentRouteName === 'ScanHome' &&
+            <KeyboardNFCReader
+              getTagInfo={tagInfo => {
+                this.setState({ tagInfo });
+              }}
+            />}
           <Text>
             {this.state.tagInfo}
           </Text>
           <Text>
             {this.state.NdefMessages}
+          </Text>
+          <Text>
+            {this.props.screenProps.currentRouteName}
           </Text>
         </View>
       </View>

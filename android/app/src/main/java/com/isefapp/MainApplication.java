@@ -3,6 +3,7 @@ package com.isefapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.bmateam.reactnativeusbserial.ReactUsbSerialPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.lwansbrough.RCTCamera.RCTCameraPackage;
 import com.novadart.reactnativenfc.ReactNativeNFCPackage;
@@ -26,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new ReactUsbSerialPackage(),
             new VectorIconsPackage(),
             new RCTCameraPackage(),
             new ReactNativeNFCPackage()

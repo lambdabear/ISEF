@@ -91,6 +91,8 @@ export default class CameraScreen extends Component {
               captureQuality="medium"
               style={styles.preview}
               aspect={Camera.constants.Aspect.fill}
+              flashMode={Camera.constants.FlashMode.auto}
+              torchMode={Camera.constants.TorchMode.auto}
             >
               <Icon
                 name="ios-radio-button-on"

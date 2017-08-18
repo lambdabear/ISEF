@@ -91,7 +91,7 @@ def enableProguardInReleaseBuilds = false
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.3"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "com.isefapp"
@@ -133,6 +133,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-usbserial')
     compile project(':react-native-vector-icons')
     compile project(':react-native-camera')
     compile project(':react-native-nfc')
@@ -146,4 +147,10 @@ dependencies {
 task copyDownloadableDepsToLibs(type: Copy) {
     from configurations.compile
     into 'libs'
+}
+
+// new
+repositories {
+  mavenCentral()
+  maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 }

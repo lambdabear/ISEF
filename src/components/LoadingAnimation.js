@@ -18,7 +18,8 @@ export default class LoadingAnimation extends Component {
     Animated.timing(this.spinValue, {
       toValue: 1,
       duration: 1500,
-      easing: Easing.linear
+      easing: Easing.linear,
+      useNativeDriver: true
     }).start(() => this.spin());
   }
 
