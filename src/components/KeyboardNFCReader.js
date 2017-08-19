@@ -1,15 +1,18 @@
 import React from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { func } from 'prop-types';
 import UsbSerial from 'react-native-usbserial';
 
 const VENDORID = '16962';
 const PRODUCTID = '57649';
-// const CORRECTROUTENAME = 'ScanHome';
 
 const styles = StyleSheet.create({
   textInput: {
-    // display: 'none'
+    display: 'none'
+  },
+  prompt: {
+    color: 'green',
+    textAlign: 'center'
   }
 });
 
@@ -41,11 +44,8 @@ export default class KeyboardNFCReader extends React.Component {
   };
 
   componentDidMount() {
-    this.detectUSBDevice = setInterval(() => {
-      this.getUSBDeviceInfo(deviceInfo => {
-        this.setState(prestate => ({ ...prestate, USBDeviceInfo: deviceInfo }));
-      });
-    }, 1000);
+    this.setUSBDeviceInfo();
+    this.detectUSBDevice = setInterval(this.setUSBDeviceInfo, 1000);
   }
 
   componentWillUnmount() {
@@ -57,6 +57,12 @@ export default class KeyboardNFCReader extends React.Component {
     getDeviceAsync(usbs, getDevicesInfo);
   };
 
+  setUSBDeviceInfo = () => {
+    this.getUSBDeviceInfo(deviceInfo => {
+      this.setState(prestate => ({ ...prestate, USBDeviceInfo: deviceInfo }));
+    });
+  };
+
   inputs = {};
 
   render() {
@@ -64,27 +70,30 @@ export default class KeyboardNFCReader extends React.Component {
       <View>
         {this.state.USBDeviceInfo.vendorID === VENDORID &&
           this.state.USBDeviceInfo.productID === PRODUCTID &&
-          <TextInput
-            ref={input => {
-              this.inputs.nfcReader = input;
-            }}
-            style={styles.textInput}
-            autoFocus
-            caretHidden
-            keyboardType={'email-address'}
-            onSubmitEditing={() => {
-              this.props.getTagInfo(this.state.tagInfo);
-              this.setState(prestate => ({ ...prestate, tagInfo: '' }));
-              this.inputs.nfcReader.focus();
-            }}
-            onEndEditing={() => {
-              this.inputs.nfcReader.focus();
-            }}
-            maxLength={200}
-            onChangeText={tagInfo =>
-              !this.state.getTagID && this.setState({ tagInfo })}
-            value={this.state.tagInfo}
-          />}
+          <View>
+            <Text style={styles.prompt}>正使用外置读卡器...</Text>
+            <TextInput
+              ref={input => {
+                this.inputs.nfcReader = input;
+              }}
+              style={styles.textInput}
+              autoFocus
+              caretHidden
+              keyboardType={'email-address'}
+              onSubmitEditing={() => {
+                this.props.getTagInfo(this.state.tagInfo);
+                this.setState(prestate => ({ ...prestate, tagInfo: '' }));
+                this.inputs.nfcReader.focus();
+              }}
+              onEndEditing={() => {
+                this.inputs.nfcReader.focus();
+              }}
+              maxLength={200}
+              onChangeText={tagInfo =>
+                !this.state.getTagID && this.setState({ tagInfo })}
+              value={this.state.tagInfo}
+            />
+          </View>}
       </View>
     );
   }

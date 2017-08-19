@@ -92,14 +92,9 @@ class ScanAnimationScreen extends React.Component {
                 this.setState({ tagInfo });
               }}
             />}
-          <Text>
+          <Text style={{ textAlign: 'center' }}>
             {this.state.tagInfo}
-          </Text>
-          <Text>
             {this.state.NdefMessages}
-          </Text>
-          <Text>
-            {this.props.screenProps.currentRouteName}
           </Text>
         </View>
       </View>

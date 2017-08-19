@@ -1,6 +1,6 @@
 import React from 'react';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
-import { arrayOf, shape, string, bool } from 'prop-types';
+import { arrayOf, shape, string, bool, func } from 'prop-types';
 
 import HomeScreen from './screens/home/HomeScreen';
 import ScanScreen from './screens/scan/ScanScreen';
@@ -20,7 +20,6 @@ const MainScreenNavigator = TabNavigator(
   {
     tabBarComponent: TabBarBottom,
     tabBarPosition: 'bottom',
-    lazy: true,
     tabBarOptions: {
       labelStyle: {
         fontSize: 10
@@ -113,8 +112,12 @@ MainScreenNavigator.propTypes = {
           overDueNum: string
         }).isRequired
       }).isRequired
-    }).isRequired
-  }).isRequired
+    }).isRequired,
+
+    currentRouteName: string.isRequired
+  }).isRequired,
+
+  onNavigationStateChange: func.isRequired
 };
 
 const getCurrentRouteName = navigationState => {
