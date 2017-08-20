@@ -7,6 +7,9 @@ import screenStyles from '../screenStyles';
 import ScanAnimation from '../../components/ScanAnimation';
 import KeyboardNFCReader from '../../components/KeyboardNFCReader';
 
+const VENDORID = '16962';
+const PRODUCTID = '57649';
+
 class ScanAnimationScreen extends React.Component {
   static navigationOptions = {
     title: '设施检测',
@@ -91,6 +94,8 @@ class ScanAnimationScreen extends React.Component {
               getTagInfo={tagInfo => {
                 this.setState({ tagInfo });
               }}
+              vendorID={VENDORID}
+              productID={PRODUCTID}
             />}
           <Text style={{ textAlign: 'center' }}>
             {this.state.tagInfo}

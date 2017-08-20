@@ -1,10 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
-import { func } from 'prop-types';
+import { func, string } from 'prop-types';
 import UsbSerial from 'react-native-usbserial';
-
-const VENDORID = '16962';
-const PRODUCTID = '57649';
 
 const styles = StyleSheet.create({
   textInput: {
@@ -35,7 +32,9 @@ async function getDeviceAsync(usbs, getDevicesInfo) {
 
 export default class KeyboardNFCReader extends React.Component {
   static propTypes = {
-    getTagInfo: func.isRequired
+    getTagInfo: func.isRequired,
+    vendorID: string.isRequired,
+    productID: string.isRequired
   };
 
   state = {
@@ -68,8 +67,8 @@ export default class KeyboardNFCReader extends React.Component {
   render() {
     return (
       <View>
-        {this.state.USBDeviceInfo.vendorID === VENDORID &&
-          this.state.USBDeviceInfo.productID === PRODUCTID &&
+        {this.state.USBDeviceInfo.vendorID === this.props.vendorID &&
+          this.state.USBDeviceInfo.productID === this.props.productID &&
           <View>
             <Text style={styles.prompt}>正使用外置读卡器...</Text>
             <TextInput
